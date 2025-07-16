@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30,
+    "role": "admin",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "age": 25,
+    "role": "user",
+    "createdAt": "2024-01-16T14:20:00Z",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "age": 35,
+    "role": "user",
+    "createdAt": "2024-01-17T09:15:00Z",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "name": "Pulakita Mitra",
+    "email": "Pulakita@example.com",
+    "age": 30,
+    "role": "admin",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "isActive": true,
+    "CreatedAt": "2025-07-16T14:51:51.869Z"
+  },
+  {
+    "id": 5,
+    "name": "Krishanu Roy",
+    "email": "Krishanu@example.com",
+    "age": 30,
+    "role": "admin",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "isActive": true,
+    "CreatedAt": "2025-07-16T14:53:03.217Z"
+  },
+  {
+    "id": 6,
+    "name": "Parnabha Mitra",
+    "email": "parnabha@example.com",
+    "age": 35,
+    "role": "user",
+    "createdAt": "2024-01-17T09:15:00Z",
+    "isActive": false,
+    "CreatedAt": "2025-07-16T15:14:36.771Z"
+  }
+]
