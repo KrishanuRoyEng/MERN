@@ -32,7 +32,6 @@
     "email": "Pulakita@example.com",
     "age": 30,
     "role": "admin",
-    "createdAt": "2024-01-15T10:30:00Z",
     "isActive": true,
     "CreatedAt": "2025-07-16T14:51:51.869Z"
   },
@@ -42,7 +41,6 @@
     "email": "Krishanu@example.com",
     "age": 30,
     "role": "admin",
-    "createdAt": "2024-01-15T10:30:00Z",
     "isActive": true,
     "CreatedAt": "2025-07-16T14:53:03.217Z"
   },
@@ -52,8 +50,25 @@
     "email": "parnabha@example.com",
     "age": 35,
     "role": "user",
-    "createdAt": "2024-01-17T09:15:00Z",
     "isActive": false,
     "CreatedAt": "2025-07-16T15:14:36.771Z"
+  },
+  {
+    "id": 7,
+    "name": "Test Doe",
+    "email": "doe@example.com",
+    "age": 30,
+    "role": "admin",
+    "isActive": true,
+    "CreatedAt": "2025-07-17T05:37:46.081Z"
+  },
+  {
+    "name": "Pulakita Roy",
+    "email": "Roy@example.com",
+    "age": 25,
+    "role": "admin",
+    "isActive": true,
+    "id": 8,
+    "CreatedAt": "2025-07-17T07:09:37.370Z"
   }
 ]

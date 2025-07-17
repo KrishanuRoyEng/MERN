@@ -1,12 +1,13 @@
 const generateResponse = (success, message, data = null, statusCode = 200) => {
     return {
-        Success : success,
-        Message : message,
-        Data: data,
-        Status: statusCode,
+        success,
+        message,
+        data,
+        statusCode,
         timestamp: new Date().toISOString(),
     };
 };
+
 
 const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

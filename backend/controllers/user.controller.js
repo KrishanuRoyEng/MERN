@@ -2,7 +2,16 @@ const fileManager = require("../utils/fileManager");
 const { generateResponse } = require("../utils/helper");
 
 const userController = {
-  getAllUsers: async (req, res) => {},
+  getAllUsers: async (req, res) => {
+    try {
+      let users = await fileManager.readData("user.json");
+      res.json(generateResponse(true, "Users retrieved successfully", users));
+    } catch (error) {
+       res
+        .status(500)
+        .json(generateResponse(false, "Failed to fetch users", null, 500));
+    }
+  },
 
   getUserById: async (req, res) => {
     try {
@@ -56,8 +65,61 @@ const userController = {
         .json(generateResponse(false, "Failed to create user", null, 500));
     }
   },
-  updateUsers: async (req, res) => {},
-  deleteUsers: async (req, res) => {},
+  updateUsers: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+      // Check if email already exists (if updating email)
+      if (updateData.email) {
+        const users = await fileManager.readData("user.json");
+        const existingUser = users.find(
+          (u) => u.email === updateData.email && u.id === parseInt(id) //! ==
+        );
+
+        if (existingUser) {
+          return res
+            .status(400)
+            .json(generateResponse(false, "Email already exists", null, 400));
+        }
+      }
+      const updatedUser = await fileManager.updateData(
+        "user.json",
+        id,
+        updateData
+      );
+      if (!updatedUser) {
+        return res
+          .status(404)
+          .json(generateResponse(false, "User not found", null, 404));
+      }
+      res.json(
+        generateResponse(true, "User updated successfully", updatedUser, 200)
+      );
+    } catch (error) {
+      res
+        .status(500)
+        .json(generateResponse(false, "Failed to update user", null, 500));
+    }
+  },
+  deleteUsers: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const deletedUser = await fileManager.deleteData("user.json", id);
+
+      if (!deletedUser) {
+        return res
+          .status(404)
+          .json(generateResponse(false, "User not found", null, 404));
+      }
+      res.json(
+        generateResponse(true, "User deleted successfully", deletedUser)
+      );
+    } catch (error) {
+      res
+        .status(500)
+        .json(generateResponse(false, "Failed to delete user", null, 500));
+    }
+  },
   getUserStats: async (req, res) => {},
 };
 module.exports = userController;

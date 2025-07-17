@@ -7,8 +7,8 @@
     "uri": ""
   },
   "auth": {
-    "jwt_secret": "",
-    "jwt_expires_in": ""
+    "jwt_secret": "af394bbb4e36946fea3981bb81fe0ba2b0fe281dc2c77845c9f4cee2dd51ec32",
+    "jwt_expires_in": "15m"
   },
   "cors": {
     "allowed_origins": ["*"],
