@@ -2,7 +2,7 @@
   "name": "backend_mongo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -10,7 +10,7 @@
     "test:ci": "jest --ci --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "krishanu_roy",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
