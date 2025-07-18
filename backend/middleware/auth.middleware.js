@@ -18,7 +18,7 @@ const authenticateToken = (req, res, next) => {
     token,
     process.env.JWT_SECRET ||
       config.get("auth.jwt_secret") ||
-      "f394bbb4e36946fea3981bb81fe0ba2b0fe281dc2c77845c9f4cee2dd51ec32",
+      "87b4539bddbfc5e6a1a62c87acba28187224",
     (err, user) => {
       if (err) {
         return res
@@ -31,21 +31,29 @@ const authenticateToken = (req, res, next) => {
   );
 };
 
+const authorize = (roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return res
+        .status(403)
+        .json(generateResponse(false, "Insufficient permissions", null, 403));
+    }
+    next();
+  };
+};
+
 const login = (req, res) => {
   const { email, password } = req.body;
+  // Simple mock authentication
   if (email === "admin@example.com" && password === "admin123") {
     const token = jwt.sign(
-      {
-        id: 1,
-        email,
-        rule: "admin",
-      },
+      { id: 1, email, role: "admin" },
       process.env.JWT_SECRET ||
         config.get("auth.jwt_secret") ||
-        "f394bbb4e36946fea3981bb81fe0ba2b0fe281dc2c77845c9f4cee2dd51ec32",
+        "87b4539bddbfc5e6a1a62c87acba28187224",
       { expiresIn: "15m" }
     );
-    res.json(generateResponse(true, "Login successful", { token }, 200));
+    res.json(generateResponse(true, "Login successful", { token }));
   } else {
     res
       .status(401)
@@ -55,5 +63,6 @@ const login = (req, res) => {
 
 module.exports = {
   authenticateToken,
+  authorize,
   login,
 };

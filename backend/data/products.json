@@ -9,6 +9,15 @@
     "createdAt": "2024-01-10T08:00:00Z"
   },
   {
+    "id": 2,
+    "name": "Coffee Mug",
+    "description": "Ceramic coffee mug",
+    "price": 12.99,
+    "category": "home",
+    "stock": 200,
+    "createdAt": "2024-01-12T12:30:00Z"
+  },
+  {
     "id": 3,
     "name": "Wireless Mouse",
     "description": "Ergonomic wireless mouse",
@@ -16,16 +25,5 @@
     "category": "electronics",
     "stock": 75,
     "createdAt": "2024-01-14T16:45:00Z"
-  },
-  {
-    "id": 4,
-    "name": "Tea Cup",
-    "description": "A cup of tea",
-    "price": 99,
-    "category": "serveware",
-    "stock": 50,
-    "createdAt": "2024-01-10T08:00:00Z",
-    "isActive": true,
-    "CreatedAt": "2025-07-16T15:13:23.128Z"
   }
 ]
