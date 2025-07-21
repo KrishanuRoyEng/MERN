@@ -1,0 +1,15 @@
+const Books = {
+    {isbn: null}, //null
+    {best_seller: true}, //bool
+    {price: 9.95, pages: 851 }, //4 bit number
+    {year: NumberInt("2024"), words: NumberInt("95403")}, //8 Bit number
+    {title: "MongoDB Tutorial"}, //String
+    {updated_at: new Data() }, //Date 
+    {pattern: "/d+'" }, //REGEX
+    {reviews:  ["dev",3.4,"ani", 3.6]}, //Array
+
+    author: {
+        first_name: "Krishanu", //Embedded document
+        last_name: "Roy",
+    },
+}

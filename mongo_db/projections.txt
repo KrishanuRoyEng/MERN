@@ -1,0 +1,142 @@
+db.products.insertMany([
+    {
+        "_id": 1,
+        "name": "xPhone",
+        "price": "799",
+        "releaseDate": "2011-05-14",
+        "spec": {
+            "ram": 4,
+            "screen": 6.5,
+            "cpu": 2.66
+        },
+        "color": [
+            "white",
+            "black"
+        ],
+        "storage": [
+            64,
+            128,
+            256
+        ]
+    },
+    {
+        "_id": 2,
+        "name": "xTablet",
+        "price": 899,
+        "releaseDate": "2011-09-01",
+        "spec": {
+            "ram": 16,
+            "screen": 9.5,
+            "cpu": 3.66
+        },
+        "color": [
+            "white",
+            "black",
+            "purple"
+        ],
+        "storage": [
+            128,
+            256,
+            512
+        ]
+    },
+    {
+        "_id": 3,
+        "name": "SmartTablet",
+        "price": 899,
+        "releaseDate": "2015-01-14",
+        "spec": {
+            "ram": 12,
+            "screen": 9.7,
+            "cpu": 3.66
+        },
+        "color": [
+            "blue"
+        ],
+        "storage": [
+            16,
+            64,
+            128
+        ]
+    },
+    {
+        "_id": 4,
+        "name": "SmartPad",
+        "price": [
+            599,
+            699,
+            799
+        ],
+        "releaseDate": "2020-05-14",
+        "spec": {
+            "ram": 8,
+            "screen": 9.7,
+            "cpu": 1.66
+        },
+        "color": [
+            "white",
+            "orange",
+            "gold",
+            "gray"
+        ],
+        "storage": [
+            128,
+            256,
+            1024
+        ]
+    },
+    {
+        "_id": 5,
+        "name": "SmartPhone",
+        "price": [
+            "599",
+            699
+        ],
+        "releaseDate": "2022-09-14",
+        "spec": {
+            "ram": 4,
+            "screen": 9.7,
+            "cpu": 1.66
+        },
+        "color": [
+            "white",
+            "orange",
+            "gold",
+            "gray"
+        ],
+        "storage": [
+            128,
+            256
+        ]
+    },
+    {
+        "_id": 6,
+        "name": "xWidget",
+        "spec": {
+            "ram": 64,
+            "screen": 9.7,
+            "cpu": 3.66
+        },
+        "color": [
+            "black"
+        ],
+        "storage": [
+            1024
+        ]
+    }
+])
+
+//Returns All fields in matchging document
+const query = {price:899}
+db.products.find(query)
+
+//Return specified fields including the _id fields
+db.prodycrs.find({}, {name:1,price:1})
+
+//Return specified fields but supress the _id fields
+db.products.find({_id:1}, {releaseDate:0,spec:0,storage:0})
+
+//Return fields in embedded document
+db.products.find({_id:1}, {'name':1,'price':1,'spec.screen':1})
+    or
+db.products.find({_id:1},{name:1,price:1,spec:{screen:1}})

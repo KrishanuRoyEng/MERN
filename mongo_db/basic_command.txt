@@ -1,0 +1,42 @@
+//Lists all the databases
+show databases
+
+//Switches to a database (creates if it doesn't exist)
+use <db_name>
+
+//Creates a new collection
+db.createCollection("users")
+
+//Inserts a document into the collection
+db.users.insertOne({name: "Alice"})
+
+//Retrieves all documents in all collection
+db.users.find()
+
+//Create a db variable to reference of your databases and provide collection name
+db.books
+db.sales
+
+//Insert Data
+db.books.insertOne(
+{
+    title: "NodeJs Tutorial",
+    price: "$15",
+    author: "Sanadip Roy",
+})
+
+// Read Data
+db.books.findOne() //finds One Record
+db.books.find() //Find All Records
+db.books.find().pretty() //Find All Records with Pretty format
+
+// Update Data
+                   // #whom to updateOne     // #what to update      
+db.books.updateOne({title:"NodeJs tutorial"},{$set:{price:"$20"}})
+
+// Delete Data
+db.books.deleteOne({title:"Nodejs Tutorial"}) //Delete One Record
+
+// Show collections
+show collections
+
