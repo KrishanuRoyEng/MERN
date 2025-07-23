@@ -1,0 +1,72 @@
+.app-container {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Reusable card component */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 6px;
+}
+
+.card-content {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-content ul {
+  padding-left: 20px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Optional custom card styles */
+.stats-card {
+  background-color: #eaf7ff;
+}
+
+.custom-card {
+  background-color: #fffbe6;
+}

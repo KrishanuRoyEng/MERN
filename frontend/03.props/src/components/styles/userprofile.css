@@ -1,0 +1,40 @@
+.user-profile {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-profile.active {
+  border-left: 5px solid #28a745;
+}
+
+.user-profile.inactive {
+  border-left: 5px solid #dc3545;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+h3 {
+  margin-top: 12px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,19 @@
+.blog-post {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.post-actions button {
+  margin-right: 10px;
+  cursor: pointer;
+}
